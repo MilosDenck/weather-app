@@ -1,0 +1,15 @@
+.current-weather-container{
+    margin-bottom: 40px;
+}
+
+.current-weather-container h3{
+    margin: 0;
+}
+
+.current-weather-container h2{
+    margin-bottom: 0;
+}
+
+.current-weather-container img {
+    width: 150px;
+}
