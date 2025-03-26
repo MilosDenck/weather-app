@@ -21,10 +21,12 @@ export type WeatherData = {
     hourly_units: {
         time: string;
         temperature_2m: string;
+        rain: string;
     };
     hourly: {
         time: string[];
         temperature_2m: number[];
+        rain: number[];
     };
     daily_units: {
         time: string;
@@ -69,3 +71,5 @@ export type Location = {
     address: Address;
     boundingbox: [string, string, string, string];
 };
+
+export type LocationArray = Location[];

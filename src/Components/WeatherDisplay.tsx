@@ -5,9 +5,10 @@ type WeatherProps = {
 	minTemp: number;
 	wmoCode: number,
 	date: string,
+	onClick: () => void;
 };
 
-const WeatherDisplayComponent = ({ maxTemp, minTemp, wmoCode, date }: WeatherProps) =>{
+const WeatherDisplayComponent = ({ maxTemp, minTemp, wmoCode, date, onClick }: WeatherProps) =>{
 
 	function getWeekday(dateString:string) {
 		const date = new Date(dateString);
@@ -16,7 +17,7 @@ const WeatherDisplayComponent = ({ maxTemp, minTemp, wmoCode, date }: WeatherPro
 	}
 
 	return (
-		<div>
+		<div onClick={onClick}>
 			<div>{getWeekday(date)}</div>
 			<img src={getWeatherIconLink(wmoCode)} />
 			<div>{maxTemp}</div>
