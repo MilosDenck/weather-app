@@ -7,40 +7,59 @@ export type WeatherData = {
     timezone_abbreviation: string;
     elevation: number;
     current_units: {
-        time: string;
-        interval: string;
-        temperature_2m: string;
-		weather_code: string;
+      time: string;
+      interval: string;
+      temperature_2m: string;
+      weather_code: string;
     };
     current: {
-        time: string;
-        interval: number;
-        temperature_2m: number;
-		weather_code: number,
+      time: string;
+      interval: number;
+      temperature_2m: number;
+      weather_code: number;
     };
     hourly_units: {
-        time: string;
-        temperature_2m: string;
-        rain: string;
+      time: string;
+      temperature_2m: string;
+      precipitation: string;
+      weather_code: string;
     };
     hourly: {
-        time: string[];
-        temperature_2m: number[];
-        rain: number[];
+      time: string[];
+      temperature_2m: number[];
+      precipitation: number[];
+      weather_code: number[];
     };
     daily_units: {
-        time: string;
-        temperature_2m_max: string;
-        temperature_2m_min: string;
-		weather_code: string;
+      time: string;
+      wind_direction_10m_dominant: string;
+      uv_index_max: string;
+      sunrise: string;
+      sunset: string;
+      precipitation_sum: string;
+      sunshine_duration: string;
+      wind_speed_10m_max: string;
+      weather_code: string;
+      temperature_2m_max: string;
+      temperature_2m_min: string;
+      precipitation_probability_max: string;
     };
     daily: {
-        time: string[];
-        temperature_2m_max: number[];
-        temperature_2m_min: number[];
-		weather_code: number[],
+      time: string[];
+      wind_direction_10m_dominant: number[];
+      uv_index_max: number[];
+      sunrise: string[];
+      sunset: string[];
+      precipitation_sum: number[];
+      sunshine_duration: number[];
+      wind_speed_10m_max: number[];
+      weather_code: number[];
+      temperature_2m_max: number[];
+      temperature_2m_min: number[];
+      precipitation_probability_max: number[];
     };
 };
+  
 
 type Address = {
     road: string;

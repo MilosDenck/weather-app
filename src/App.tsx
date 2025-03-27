@@ -5,6 +5,7 @@ import WeatherDisplayComponent from './Components/WeatherDisplay'
 import CurrentWeatherComponent from './Components/CurrentWeather';
 import { useLocationApi } from './ViewModels/LocationApiViewModel';
 import WeatherChart from './Components/WeatherChart';
+import DailyDataComponent from './Components/DailyData';
 
 function App()  {
   const { location, loadingLocation, updateLocationBySearchValue } = useLocationApi()
@@ -20,6 +21,7 @@ function App()  {
   
   return (
     <div className="App">
+      
       {
         weatherData != null && location != null && !loadingWeather && !loadingLocation ?
         <div style={{justifyContent: 'center',alignItems: 'center',display: 'flex', flexDirection:'column', width: '100%'}}>
@@ -31,7 +33,8 @@ function App()  {
               ))
             }
           </div>
-          <WeatherChart values={weatherData.hourly.temperature_2m.slice(selectedDay*24, selectedDay*24 + 24)} times={weatherData.hourly.time.slice(selectedDay*24, selectedDay*24 + 24)} rain={weatherData.hourly.rain.slice(selectedDay*24, selectedDay*24 + 24)} />
+          <WeatherChart values={weatherData.hourly.temperature_2m.slice(selectedDay*24, selectedDay*24 + 24)} precipitation={weatherData.hourly.precipitation.slice(selectedDay*24, selectedDay*24 + 24)} />
+          <DailyDataComponent weatherData={weatherData} selectedDay={selectedDay}/>
         </div>
         : null
       }
