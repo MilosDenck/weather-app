@@ -7,7 +7,7 @@ import { ChartsXAxis } from '@mui/x-charts/ChartsXAxis';
 import { ChartsYAxis } from '@mui/x-charts/ChartsYAxis';
 import { ChartsGrid } from '@mui/x-charts/ChartsGrid';
 import { ChartsTooltip } from '@mui/x-charts/ChartsTooltip';
-import { ChartsAxisHighlight, LineHighlightElement, LineHighlightPlot } from "@mui/x-charts";
+import { ChartsAxisHighlight, LineHighlightPlot } from "@mui/x-charts";
 
 
 
@@ -17,7 +17,6 @@ type WeatherChartProps = {
 }
 
 const WeatherChart = ({ values, precipitation}: WeatherChartProps) =>{
-
 
     return (
        

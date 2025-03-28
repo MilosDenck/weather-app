@@ -11,24 +11,28 @@ export type WeatherData = {
       interval: string;
       temperature_2m: string;
       weather_code: string;
+      is_day: string;
     };
     current: {
       time: string;
       interval: number;
       temperature_2m: number;
       weather_code: number;
+      is_day: number;
     };
     hourly_units: {
       time: string;
       temperature_2m: string;
       precipitation: string;
       weather_code: string;
+      is_day: string;
     };
     hourly: {
       time: string[];
       temperature_2m: number[];
       precipitation: number[];
       weather_code: number[];
+      is_day: number[];
     };
     daily_units: {
       time: string;
@@ -59,6 +63,7 @@ export type WeatherData = {
       precipitation_probability_max: number[];
     };
 };
+  
   
 
 type Address = {

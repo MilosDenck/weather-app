@@ -1,43 +1,46 @@
-export const getWeatherIconLink = (weatherCode: number): string => {
+export const getWeatherIconLink = (weatherCode: number, isDay: boolean = true): string => {
+
+	
 	const iconMap: { [key: number]: string } = {
-		0: "https://openweathermap.org/img/wn/01d@2x.png",  
-		1: "https://openweathermap.org/img/wn/02d@2x.png",  
-		2: "https://openweathermap.org/img/wn/03d@2x.png", 
-		3: "https://openweathermap.org/img/wn/04d@2x.png", 
 		
-		45: "https://openweathermap.org/img/wn/50d@2x.png", 
-		48: "https://openweathermap.org/img/wn/50d@2x.png",
+		0: isDay ? `wi-day-sunny` : `wi-night-clear`,  
+		1: isDay ? `wi-day-cloudy`: `wi-night-alt-cloudy`,  
+		2: `wi-cloud`, 
+		3: `wi-cloudy`, 
+		
+		45: 'wi-fog', 
+		48: 'wi-fog',
 
-		51: "https://openweathermap.org/img/wn/09d@2x.png", 
-		53: "https://openweathermap.org/img/wn/09d@2x.png",
-		55: "https://openweathermap.org/img/wn/09d@2x.png", 
+		51: `wi-snow`, 
+		53: `wi-snow`,
+		55: `wi-snow`, 
 
-		56: "https://openweathermap.org/img/wn/13d@2x.png", 
-		57: "https://openweathermap.org/img/wn/13d@2x.png", 
+		56: `wi-rain-mix`, 
+		57: `wi-rain-mix`, 
 
-		61: "https://openweathermap.org/img/wn/10d@2x.png", 
-		63: "https://openweathermap.org/img/wn/10d@2x.png", 
-		65: "https://openweathermap.org/img/wn/10d@2x.png", 
+		61: `wi-rain-mix`, 
+		63: `wi-hail`, 
+		65: 'wi-rain', 
 
-		66: "https://openweathermap.org/img/wn/13d@2x.png", 
-		67: "https://openweathermap.org/img/wn/13d@2x.png", 
+		66: `wi-snow`, 
+		67: `wi-snow`, 
 
-		41: "https://openweathermap.org/img/wn/13d@2x.png", 
-		50: "https://openweathermap.org/img/wn/13d@2x.png", 
-		60: "https://openweathermap.org/img/wn/13d@2x.png", 
+		41: `wi-snow`, 
+		50: `wi-snow`, 
+		60: `wi-snow`, 
 
-		77: "https://openweathermap.org/img/wn/13d@2x.png", 
+		77: `wi-snow`, 
 
-		80: "https://openweathermap.org/img/wn/09d@2x.png", 
-		81: "https://openweathermap.org/img/wn/09d@2x.png", 
-		82: "https://openweathermap.org/img/wn/09d@2x.png", 
+		80: `wi-showers`, 
+		81: `wi-showers`, 
+		82: `wi-showers`, 
 
-		85: "https://openweathermap.org/img/wn/13d@2x.png", 
-		86: "https://openweathermap.org/img/wn/13d@2x.png", 
+		85: `wi-snow`, 
+		86: `wi-snow`, 
 
-		95: "https://openweathermap.org/img/wn/11d@2x.png", 
-		96: "https://openweathermap.org/img/wn/11d@2x.png", 
-		99: "https://openweathermap.org/img/wn/11d@2x.png",
+		95: `wi-storm-showers`, 
+		96: `wi-thunderstorm`, 
+		99: `wi-thunderstorm`,
 	};
 
 	return iconMap[weatherCode] || "https://openweathermap.org/img/wn/01d@2x.png"; 
