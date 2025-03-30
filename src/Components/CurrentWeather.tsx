@@ -1,6 +1,6 @@
 import { Location } from "../Models/Types";
 import { getWeatherIconLink } from "../utils/weatherIcons";
-import "./CurrentWeather.css"
+import { getWeatherInfo } from "../utils/weatherInfo";
 
 type currentWeatherProps = {
 	temp: number;
@@ -14,8 +14,10 @@ const CurrentWeatherComponent = ({ temp, wmoCode, location, isDay }: currentWeat
 	return (
 		<div className="current-weather-container">
 			<h2>{location.address.city}</h2>
-			<i style={{fontSize: 90}} className={`wi ${getWeatherIconLink(wmoCode, isDay)}`}></i>
-			<h3>{temp}°C</h3>
+			<div>{getWeatherInfo(wmoCode, isDay)}</div>
+			<i className={`wi current-weather-icon ${getWeatherIconLink(wmoCode, isDay)}`}></i>
+			<div>aktuell</div>
+			<div>{temp}°</div>
 		</div>
 	)
 }

@@ -18,6 +18,23 @@ i {
   margin: 15px;;
 }
 
+.current-weather-container{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.current-weather-container h3{
+  margin: 0;
+}
+
+.current-weather-container h2{
+  margin-bottom: 0;
+}
+
+.current-weather-container img {
+  width: 150px;
+}
+
 .info-card {
   padding: 10px;
   margin: 10px;
@@ -45,3 +62,106 @@ i {
   background-color: rgb(0,0,0,0.5);
   color: white;
 }
+
+.weather-chart{
+  background-color: rgb(255,255,255,0.3);
+  border: 1px solid rgb(0,0,0,0.3);
+  border-radius: 20px;
+}
+
+.weather-chart-container{
+  width: 90%;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.7em;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.current-weather-icon{
+  font-size: 90px;
+}
+
+.weather-icon{
+  font-size: 42px;
+}
+
+.info-card i{
+  font-size: 48px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .info-card {
+    width: 85%;
+    margin: 5px;
+  }
+
+  .info-card i{
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: 900;
+  }
+  
+  h2 {
+    font-size: 1.7em;
+    font-weight: 900;
+  }
+  
+  h3 {
+    font-size: 1.0em;
+  }
+  
+  h4 {
+    font-size: 0.7em;
+  }
+
+  .weather-icon{
+    font-size: 20px;
+  }
+
+  .current-weather-container{
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .weather-display-text{
+    font-size: 0.6em;
+  }
+
+  .current-weather-icon{
+    margin-bottom: 15px;
+    font-size: 80px;
+  }
+
+  .weather-display{
+    margin: 10px 3px;
+    /* border-radius: 10px; */
+    padding: 5px 0px;
+  }
+
+
+
+  i {
+    margin: 10px;;
+  }
+}  

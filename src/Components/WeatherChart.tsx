@@ -1,5 +1,3 @@
-import "./CurrentWeather.css"
-
 import { ResponsiveChartContainer } from '@mui/x-charts/ResponsiveChartContainer';
 import { LinePlot, MarkPlot } from '@mui/x-charts/LineChart';
 import { BarPlot } from '@mui/x-charts/BarChart';
@@ -19,8 +17,8 @@ type WeatherChartProps = {
 const WeatherChart = ({ values, precipitation}: WeatherChartProps) =>{
 
     return (
-       
-        <ResponsiveChartContainer
+        <div className="weather-chart-container">
+        <ResponsiveChartContainer className="weather-chart"
             series={[
                 {
                     type: 'line',
@@ -49,7 +47,7 @@ const WeatherChart = ({ values, precipitation}: WeatherChartProps) =>{
                 { id: 'leftAxis' },
                 { id: 'rightAxis', min: 0, max: Math.round(((Math.max(...precipitation)+0.01)*1.4) * 10) / 10  },
               ]}
-            height={400}
+            height={window.screen.width < 600 ? window.screen.height/3 : window.screen.height/2}
             >
           <ChartsGrid horizontal />
           <BarPlot />
@@ -68,6 +66,7 @@ const WeatherChart = ({ values, precipitation}: WeatherChartProps) =>{
           <ChartsAxisHighlight x="line" />
           <ChartsTooltip />
         </ResponsiveChartContainer>
+        </div>
     )
 }
 

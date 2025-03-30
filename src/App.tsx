@@ -9,8 +9,8 @@ import DailyDataComponent from './Components/DailyData';
 
 function App()  {
   const { location, updateLocationBySearchValue } = useLocationApi()
-  const { weatherData, updateWeatherData } = useWeatherApi()
 
+  const { weatherData, updateWeatherData } = useWeatherApi()
   const [selectedDay, setSelectedDay] = useState<number>(0)
 
   useEffect(() => {
@@ -18,15 +18,13 @@ function App()  {
       updateWeatherData(location)
   }}, [location]);
   
-  
   return (
     <div className="App">
-      
       {
         weatherData != null && location != null  ?
         <div style={{justifyContent: 'center',alignItems: 'center',display: 'flex', flexDirection:'column', width: '100%'}}>
           <CurrentWeatherComponent temp={weatherData.current.temperature_2m} wmoCode={weatherData.current.weather_code} location={location} isDay={weatherData.current.is_day === 1}/>
-          <div style={{display: 'flex'}}>
+          <div style={{display: 'flex', marginBottom: '10px'}}>
             {
               Array.from({ length: 7 }, (_, i) => (
                 <WeatherDisplayComponent className={`${i == selectedDay ? "active" : ""}`} key={i} onClick={() => setSelectedDay(i)} maxTemp={weatherData.daily.temperature_2m_max[i]} minTemp={weatherData.daily.temperature_2m_min[i]} wmoCode={weatherData.daily.weather_code[i]} date={weatherData.daily.time[i]}/>

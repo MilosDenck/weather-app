@@ -13,16 +13,16 @@ const WeatherDisplayComponent = ({ maxTemp, minTemp, wmoCode, date, className, o
 
 	function getWeekday(dateString:string) {
 		const date = new Date(dateString);
-		const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+		const weekdays = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
 		return weekdays[date.getDay()];
 	}
 
 	return (
 		<div className={`weather-display ${className}`} onClick={onClick}>
 			<h4>{getWeekday(date)}</h4>
-			<i style={{fontSize: 52}} className={`wi ${getWeatherIconLink(wmoCode)}`}></i>
-			<div>{maxTemp}</div>
-			<div>{minTemp}</div>
+			<i className={`wi weather-icon ${getWeatherIconLink(wmoCode)}`}></i>
+			<div className="weather-display-text" style={{fontWeight: 'bold'}}>{maxTemp}°</div>
+			<div className="weather-display-text">{minTemp}°</div>
 		</div>
 	)
 }
