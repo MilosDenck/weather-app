@@ -15,7 +15,7 @@ const DailyDataComponent = ({weatherData, selectedDay}: DailyDataProps) =>{
     }
 
     return (
-        <div className='container grid grid-cols-2 md:grid-cols-3 place-items-center'>
+        <div className='container grid grid-cols-2 md:grid-cols-3 place-items-center daily-info-container'>
             <div className='info-card'>
                 <h3>Wind</h3>
                 <i className={`wi wi-wind towards-${weatherData.daily.wind_direction_10m_dominant[selectedDay]}-deg`}></i>
